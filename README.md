@@ -24,4 +24,5 @@ Puxar últimas imagens do instagram para adicionar na nossa página web.
 
 - [x] Fazer uns dos casos de uso acima
   - [x] Pegar fotos, descrição do produto e preço de Netshoes
+  - [x] Pegar fotos, nome do filme nio IMDB
 - [] Fazer o download de imagens e deixar em uma pasta temporária

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .container {
+      display: flex;
+      gap: .4rm;
+      flex-direction: column;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    div img {
+      width: 20%;
+      height: 20%;
+      object-fit: cover;
+    }
+    div span {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+    }
+  </style>
+
+  <div class="container"></div>
+
+  <script>
+    (async () => {
+      const response = await fetch('./imdb.json')
+      const data = await response.json();
+
+      const htmlList = data
+      .map(movie => `<div><img src="${movie.image}"><span>${movie.name}</span></div>`)
+      .join('')
+
+      document.querySelector('.container').innerHTML = htmlList
+    })();
+  </script>
+</body>
+
+</html>
